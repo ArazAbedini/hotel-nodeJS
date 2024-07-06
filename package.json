@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/ArazAbedini/hotel-nodeJS#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
-    "mongoose": "^8.4.4",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.5",
     "nodemon": "^3.1.4",
     "validator": "^13.12.0"
   }
