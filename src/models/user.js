@@ -22,6 +22,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['customer', 'owner']
     },
+    reservations: [{
+        start: {
+            type: String,
+        },
+        end: {
+            type: String,
+        },
+        room: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Room'
+        }
+    }],
     tokens: [{
         token: {
             type: String,
