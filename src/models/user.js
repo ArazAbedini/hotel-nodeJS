@@ -51,6 +51,12 @@ userSchema.methods.generateAuthToken = async function () {
 
     return token
 }
+userSchema.methods.reserve = async function (start, end, roomId) {
+    const user = this
+    const reserve = {start, end, roomId}
+    user.reservations = user.reservations.concat({reserve})
+    await user.save()
+}
 userSchema.statics.findUser = async function (code, password) {
     const user = await User.findOne({code})
     

@@ -22,6 +22,25 @@ const roomSchema = new mongoose.Schema({
 })
 
 
+roomSchema.statics.findAndFilter = async function (type, lowerBound, upperBound) {
+    const rooms = Room.find({
+        type: type,
+        price: { $gte: lowerBound, $lte: upperBound }
+      });
+    
+
+    if (!rooms) {
+        throw new Error('Unable to login')
+    }
+
+    return rooms
+
+}
+
+
+
+
+
 const Room = mongoose.model('Room', roomSchema);
 
 module.exports = Room
